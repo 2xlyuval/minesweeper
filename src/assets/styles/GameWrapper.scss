@@ -1,0 +1,19 @@
+.game-wrapper {
+  background-color: #c0c0c0;
+  padding: 5px;
+  border-radius: 10px;
+
+  .board {
+    padding: 10px;
+    margin: 2px;
+    margin-top: 7px;
+
+    .controls {
+      margin-bottom: 10px;
+    }
+
+    .cells-wrapper {
+      display: grid;
+    }
+  }
+}
