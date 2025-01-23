@@ -1,8 +1,9 @@
 import { cell } from "./cell.type"
 
 export type board = {
-  matrix: cell[][]
+  difficulty: "easy" | "medium" | "hard" | "custom"
   rows: number
   cols: number
   bombs: number
+  matrix: cell[][]
 }

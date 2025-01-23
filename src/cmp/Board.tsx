@@ -1,10 +1,14 @@
+import { useSelector } from "react-redux"
 import { boardService } from "../services/service.board"
 import { utileService } from "../services/service.utils"
 import { cell } from "../types/cell.type"
 import { Cell } from "./Cell"
 import { Controls } from "./Controls"
+import { RootState } from "../store/store"
 
 export function Board() {
+  const board = useSelector((state: RootState) => state.board)
+  console.log(board)
   const boardGrid = { rows: 10, cols: 10 }
   const style = {
     gridTemplateRows: `repeat(${boardGrid.rows}, 16px)`,
