@@ -1,5 +1,5 @@
 export function Menu() {
-  const menuItems = ["Game", "Options", "Help"]
+  const menuItems: string[] = ["Game", "Options", "Help"]
   return (
     <div className="menu">
       {menuItems.map((item, index) => (

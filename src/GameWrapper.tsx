@@ -1,5 +1,5 @@
 import { Board } from "./cmp/Board"
-import { Menu } from "./cmp/menu/menu"
+import { Menu } from "./cmp/menu/Menu"
 
 export function GameWrapper() {
   return (

@@ -1,4 +1,4 @@
-export function Cell({ cell }) {
+export function Cell({ cell }: { cell: string | number }) {
   // cell options:
   // isCovered: true, false
   // coverData: empty, question, flag

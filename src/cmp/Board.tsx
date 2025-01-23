@@ -19,12 +19,12 @@ export function Board() {
     matrixWithRandomBombs
   )
 
-  console.log(bombs)
-  console.log(matrixWithRandomBombs)
-  console.log(matrixBombsWithNumbers)
-
-  function createMatrixWithRandomBombs(rows, cols, bombs) {
-    const matrix = Array.from({ length: rows }, () =>
+  function createMatrixWithRandomBombs(
+    rows: number,
+    cols: number,
+    bombs: number
+  ): (string | number)[][] {
+    const matrix: (string | number)[][] = Array.from({ length: rows }, () =>
       Array.from({ length: cols }, () => 0)
     )
     for (let i = 0; i < bombs; i++) {
@@ -36,7 +36,7 @@ export function Board() {
     return matrix
   }
 
-  function calculateBombs(rows, cols) {
+  function calculateBombs(rows: number, cols: number): number {
     const totalCells = rows * cols
     const randomPercentage =
       utileService.getRandomBetweenInclusive(10, 20) * 0.01
@@ -44,7 +44,11 @@ export function Board() {
     return totalBombs
   }
 
-  function countBombsAround(matrix, i, j) {
+  function countBombsAround(
+    matrix: (string | number)[][],
+    i: number,
+    j: number
+  ): number {
     let bombsAround = 0
     for (let row = i - 1; row <= i + 1; row++) {
       for (let col = j - 1; col <= j + 1; col++) {
@@ -57,7 +61,9 @@ export function Board() {
     return bombsAround
   }
 
-  function createMatrixBombsWithNumbers(matrixWithRandomBombs) {
+  function createMatrixBombsWithNumbers(
+    matrixWithRandomBombs: (string | number)[][]
+  ): (string | number)[][] {
     const matrix = matrixWithRandomBombs.map((row, i) =>
       row.map((cell, j) => {
         if (cell === "B") return "B"
