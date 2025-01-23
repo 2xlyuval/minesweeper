@@ -1,19 +1,13 @@
-export function Cell({ cell }: { cell: string | number }) {
-  // cell options:
-  // isCovered: true, false
-  // coverData: empty, question, flag
-  // data: bomb, number, empty
-  const cellData = { isCovered: false, coverData: null, data: "empty" }
+import { cell } from "../types/cell.type"
+
+export function Cell({ cell }: { cell: cell }) {
+  const { id, value, isRevealed, state } = cell
   return (
-    <div
-      className={`cell ${
-        cellData.isCovered ? "outer-border" : "uncover-border"
-      }`}
-    >
-      {cellData.isCovered ? (
-        <span className="cover">?</span>
+    <div className={`cell ${isRevealed ? "uncover-border" : "outer-border"}`}>
+      {isRevealed ? (
+        <span className="uncover">{cell.value}</span>
       ) : (
-        <span className="uncover">{cell}</span>
+        <span className="cover"></span>
       )}
     </div>
   )
