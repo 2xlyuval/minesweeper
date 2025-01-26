@@ -26,10 +26,11 @@ export function Cell({ cell }: { cell: cell }) {
   return (
     <div
       className={`cell ${isRevealed ? "uncover-border" : "outer-border"}`}
+      style={cellStyle}
       onClick={handleClick}
     >
       {isRevealed ? (
-        <span className={"uncover"} style={cellStyle}>
+        <span className={"uncover"}>
           {cell.value === 0 ? "" : <CustomIcon name={name} />}
         </span>
       ) : (
