@@ -7,8 +7,8 @@ export const SET_MATRIX = "SET_MATRIX"
 
 const initialState: board = {
   level: "easy",
-  rows: 8,
-  cols: 8,
+  rows: 0,
+  cols: 0,
   bombs: 0,
   matrix: [],
 }

@@ -6,7 +6,7 @@ import { Cell } from "./Cell"
 import { Controls } from "./Controls"
 import { RootState } from "../store/store"
 import { useEffect } from "react"
-import { setBombs, setMatrix } from "../store/board.actions"
+import { setBombs, setMatrix, setRowsAndCols } from "../store/board.actions"
 import { board } from "../types/board.type"
 
 export function Board() {
@@ -40,7 +40,7 @@ export function Board() {
         cols = 30
         break
     }
-
+    setRowsAndCols(rows, cols)
     createBoard(rows, cols)
   }
 
