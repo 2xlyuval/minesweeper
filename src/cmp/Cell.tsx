@@ -7,8 +7,8 @@ export function Cell({ cell }: { cell: cell }) {
   const [isClickedBomb, setIsClickedBomb] = useState(false)
   const name = cell.value === "B" ? "bomb" : cell.value
 
-  const cellStyle = {
-    backgroundColor: isClickedBomb ? "red" : "unset",
+  const clickedBombCellStyle = {
+    backgroundColor: "red",
   }
 
   function handleClick() {
@@ -26,7 +26,7 @@ export function Cell({ cell }: { cell: cell }) {
   return (
     <div
       className={`cell ${isRevealed ? "uncover-border" : "outer-border"}`}
-      style={cellStyle}
+      {...(isClickedBomb ? { style: clickedBombCellStyle } : {})}
       onClick={handleClick}
     >
       {isRevealed ? (
