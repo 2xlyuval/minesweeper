@@ -5,26 +5,67 @@ import { cell } from "../types/cell.type"
 import { Cell } from "./Cell"
 import { Controls } from "./Controls"
 import { RootState } from "../store/store"
+import { useEffect } from "react"
+import { setBombs, setMatrix } from "../store/board.actions"
+import { board } from "../types/board.type"
 
 export function Board() {
-  const board = useSelector((state: RootState) => state.board)
-  console.log(board)
-  const boardGrid = { rows: 10, cols: 10 }
+  const { level, rows, cols, matrix }: board = useSelector(
+    (state: RootState) => state.board
+  )
+  useEffect(() => {
+    boardSetup(level)
+  }, [level])
+
   const style = {
-    gridTemplateRows: `repeat(${boardGrid.rows}, 16px)`,
-    gridTemplateColumns: `repeat(${boardGrid.cols}, 16px)`,
+    gridTemplateRows: `repeat(${rows}, 16px)`,
+    gridTemplateColumns: `repeat(${cols}, 16px)`,
   }
 
-  const bombs: number = calculateBombs(boardGrid.rows, boardGrid.cols)
+  function boardSetup(level: string) {
+    let rows = 0
+    let cols = 0
+    switch (level) {
+      case "easy":
+        rows = 8
+        cols = 8
+        break
 
-  const matrixWithRandomBombs: cell[][] = createMatrixWithRandomBombs(
-    boardGrid.rows,
-    boardGrid.cols,
-    bombs
-  )
-  const matrixBombsWithNumbers: cell[][] = createMatrixBombsWithNumbers(
-    matrixWithRandomBombs
-  )
+      case "medium":
+        rows = 16
+        cols = 16
+        break
+      case "hard":
+        rows = 16
+        cols = 30
+        break
+    }
+
+    createBoard(rows, cols)
+  }
+
+  function createBoard(rows: number, cols: number) {
+    const bombs: number = calculateBombs(rows, cols)
+    const matrixWithRandomBombs: cell[][] = createMatrixWithRandomBombs(
+      rows,
+      cols,
+      bombs
+    )
+    const matrixBombsWithNumbers: cell[][] = createMatrixBombsWithNumbers(
+      matrixWithRandomBombs
+    )
+
+    setBombs(bombs)
+    setMatrix(matrixBombsWithNumbers)
+  }
+
+  function calculateBombs(rows: number, cols: number): number {
+    const totalCells = rows * cols
+    const randomPercentage =
+      utileService.getRandomBetweenInclusive(10, 20) * 0.01
+    const totalBombs = Math.round(totalCells * randomPercentage)
+    return totalBombs
+  }
 
   function createMatrixWithRandomBombs(
     rows: number,
@@ -41,14 +82,6 @@ export function Board() {
       else i--
     }
     return matrix
-  }
-
-  function calculateBombs(rows: number, cols: number): number {
-    const totalCells = rows * cols
-    const randomPercentage =
-      utileService.getRandomBetweenInclusive(10, 20) * 0.01
-    const totalBombs = Math.round(totalCells * randomPercentage)
-    return totalBombs
   }
 
   function countBombsAround(matrix: cell[][], i: number, j: number): number {
@@ -77,11 +110,12 @@ export function Board() {
     return matrix
   }
 
+  if (!matrix.length) return <div>Loading...</div>
   return (
     <div className="board outer-border">
       <Controls />
       <div className="cells-wrapper inner-border" style={style}>
-        {matrixBombsWithNumbers.map((row, i) =>
+        {matrix.map((row, i) =>
           row.map((cell, j) => <Cell key={`${i}-${j}`} cell={cell} />)
         )}
       </div>

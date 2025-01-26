@@ -1,20 +1,28 @@
 import { board } from "../types/board.type"
 
+export const SET_LEVEL = "SET_LEVEL"
+export const SET_ROWS_AND_COLS = "SET_ROWS_AND_COLS"
+export const SET_BOMBS = "SET_BOMBS"
+export const SET_MATRIX = "SET_MATRIX"
+
 const initialState: board = {
-  difficulty: "easy",
-  rows: 0,
-  cols: 0,
+  level: "easy",
+  rows: 8,
+  cols: 8,
   bombs: 0,
   matrix: [],
 }
 
 function boardReducer(state = initialState, action: any) {
   switch (action.type) {
-    case "ADD_CARD":
-      return {
-        ...state,
-        cards: state.cards.concat(action.payload),
-      }
+    case SET_LEVEL:
+      return { ...state, level: action.payload }
+    case SET_ROWS_AND_COLS:
+      return { ...state, rows: action.payload.rows, cols: action.payload.cols }
+    case SET_BOMBS:
+      return { ...state, bombs: action.payload }
+    case SET_MATRIX:
+      return { ...state, matrix: action.payload }
     default:
       return state
   }
