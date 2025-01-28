@@ -40,6 +40,7 @@ export function Cell({ cell }: { cell: cell }) {
     revealZeroCells(rowIndex, colIndex)
   }
 
+  //need to update this  - reveal all cell that are 0 and when it end the number
   function revealZeroCells(rowIndex: number, colIndex: number) {
     // Set to track visited cells
     const visited = new Set<string>()
@@ -57,6 +58,9 @@ export function Cell({ cell }: { cell: cell }) {
 
       const cellKey = `${row},${col}` // Unique key for each cell
 
+      // console.log("Revealing cell:", row, col)
+      updateCell({ ...matrix[row][col], isRevealed: true })
+
       // Skip if already visited or if the cell is not zero
       if (visited.has(cellKey) || matrix[row][col].value !== 0) {
         return
@@ -64,9 +68,6 @@ export function Cell({ cell }: { cell: cell }) {
 
       // Mark the cell as visited
       visited.add(cellKey)
-
-      // console.log("Revealing cell:", row, col)
-      updateCell({ ...matrix[row][col], isRevealed: true })
 
       // Recursively check neighbors
       for (let i = row - 1; i <= row + 1; i++) {

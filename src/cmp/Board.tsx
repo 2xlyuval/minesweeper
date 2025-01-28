@@ -14,9 +14,7 @@ export function Board() {
     (state: RootState) => state.board
   )
   useEffect(() => {
-    console.log("boardSetup")
     if (!matrix.length) boardSetup(level)
-    console.log("matrix", matrix)
   }, [matrix])
 
   const style = {
