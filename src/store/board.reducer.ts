@@ -4,6 +4,7 @@ export const SET_LEVEL = "SET_LEVEL"
 export const SET_ROWS_AND_COLS = "SET_ROWS_AND_COLS"
 export const SET_BOMBS = "SET_BOMBS"
 export const SET_MATRIX = "SET_MATRIX"
+export const UPDATE_CELL = "UPDATE_CELL"
 
 const initialState: board = {
   level: "easy",
@@ -23,6 +24,13 @@ function boardReducer(state = initialState, action: any) {
       return { ...state, bombs: action.payload }
     case SET_MATRIX:
       return { ...state, matrix: action.payload }
+    case UPDATE_CELL:
+      const newMatrix = state.matrix.map((row) =>
+        row.map((cell) =>
+          cell.id === action.payload.id ? action.payload : cell
+        )
+      )
+      return { ...state, matrix: newMatrix }
     default:
       return state
   }

@@ -5,11 +5,13 @@ export const boardService = {
   createDefaultCell,
 }
 
-function createDefaultCell(): cell {
+function createDefaultCell(rowIdx: number, colIdx: number): cell {
   return {
     id: `cell-${utileService.makeId()}`,
     value: 0,
     isRevealed: false,
     state: "empty",
+    rowIdx,
+    colIdx,
   }
 }

@@ -3,4 +3,6 @@ export type cell = {
   value: "B" | number
   isRevealed: boolean
   state: "empty" | "flag" | "question"
+  rowIdx: number
+  colIdx: number
 }

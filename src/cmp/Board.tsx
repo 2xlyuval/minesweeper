@@ -14,8 +14,10 @@ export function Board() {
     (state: RootState) => state.board
   )
   useEffect(() => {
-    boardSetup(level)
-  }, [level])
+    console.log("boardSetup")
+    if (!matrix.length) boardSetup(level)
+    console.log("matrix", matrix)
+  }, [matrix])
 
   const style = {
     gridTemplateRows: `repeat(${rows}, 16px)`,
@@ -72,8 +74,10 @@ export function Board() {
     cols: number,
     bombs: number
   ): cell[][] {
-    const matrix: cell[][] = Array.from({ length: rows }, () =>
-      Array.from({ length: cols }, () => boardService.createDefaultCell())
+    const matrix: cell[][] = Array.from({ length: rows }, (_, rowIndex) =>
+      Array.from({ length: cols }, (_, colIndex) =>
+        boardService.createDefaultCell(rowIndex, colIndex)
+      )
     )
     for (let i = 0; i < bombs; i++) {
       let row = utileService.getRandomBetweenInclusive(0, rows - 1)

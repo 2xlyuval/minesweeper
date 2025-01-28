@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { cell } from "../types/cell.type"
 import { CustomIcon } from "./CustomIcon"
+import { updateCell } from "../store/board.actions"
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store"
 
 export function Cell({ cell }: { cell: cell }) {
-  const [isRevealed, setIsRevealed] = useState(cell.isRevealed)
+  const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
   const name = cell.value === "B" ? "bomb" : cell.value
 
@@ -12,9 +15,17 @@ export function Cell({ cell }: { cell: cell }) {
   }
 
   function handleClick() {
-    setIsRevealed(true)
-    if (cell.value === "B") {
-      clickOnBomb()
+    updateCell({ ...cell, isRevealed: true })
+
+    switch (cell.value) {
+      case 0:
+        clickOnZero(cell.rowIdx, cell.colIdx)
+        break
+      case "B":
+        clickOnBomb()
+        break
+      default:
+        break
     }
   }
 
@@ -23,13 +34,61 @@ export function Cell({ cell }: { cell: cell }) {
     setIsClickedBomb(true)
   }
 
+  function clickOnZero(rowIndex: number, colIndex: number) {
+    console.log("Click on Zero")
+    //this should reveal all the cells around it if they also have a value of 0
+    revealZeroCells(rowIndex, colIndex)
+  }
+
+  function revealZeroCells(rowIndex: number, colIndex: number) {
+    // Set to track visited cells
+    const visited = new Set<string>()
+
+    function helper(row: number, col: number) {
+      // Check bounds
+      if (
+        row < 0 ||
+        col < 0 ||
+        row >= matrix.length ||
+        col >= matrix[0].length
+      ) {
+        return
+      }
+
+      const cellKey = `${row},${col}` // Unique key for each cell
+
+      // Skip if already visited or if the cell is not zero
+      if (visited.has(cellKey) || matrix[row][col].value !== 0) {
+        return
+      }
+
+      // Mark the cell as visited
+      visited.add(cellKey)
+
+      // console.log("Revealing cell:", row, col)
+      updateCell({ ...matrix[row][col], isRevealed: true })
+
+      // Recursively check neighbors
+      for (let i = row - 1; i <= row + 1; i++) {
+        for (let j = col - 1; j <= col + 1; j++) {
+          if (i !== row || j !== col) {
+            helper(i, j)
+          }
+        }
+      }
+    }
+
+    // Start recursion
+    helper(rowIndex, colIndex)
+  }
+
   return (
     <div
-      className={`cell ${isRevealed ? "uncover-border" : "outer-border"}`}
+      className={`cell ${cell.isRevealed ? "uncover-border" : "outer-border"}`}
       {...(isClickedBomb ? { style: clickedBombCellStyle } : {})}
       onClick={handleClick}
     >
-      {isRevealed ? (
+      {cell.isRevealed ? (
         <span className={"uncover"}>
           {cell.value === 0 ? "" : <CustomIcon name={name} />}
         </span>
