@@ -1,4 +1,193 @@
 export const iconSvg: { [key: string | number]: string } = {
+  faceSmile: `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" width="5" height="1" fill="black"/>
+<rect x="15" y="4" width="1" height="2" fill="black"/>
+<rect y="6" width="1" height="5" fill="black"/>
+<rect x="16" y="6" width="1" height="5" fill="black"/>
+<rect x="1" y="4" width="1" height="2" fill="black"/>
+<rect x="1" y="11" width="1" height="2" fill="black"/>
+<rect x="15" y="11" width="1" height="2" fill="black"/>
+<rect x="11" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="15" width="2" height="1" fill="black"/>
+<rect x="11" y="15" width="2" height="1" fill="black"/>
+<rect x="13" y="14" width="1" height="1" fill="black"/>
+<rect x="14" y="13" width="1" height="1" fill="black"/>
+<rect x="3" y="14" width="1" height="1" fill="black"/>
+<rect x="2" y="13" width="1" height="1" fill="black"/>
+<rect x="2" y="3" width="1" height="1" fill="black"/>
+<rect x="3" y="2" width="1" height="1" fill="black"/>
+<rect x="13" y="2" width="1" height="1" fill="black"/>
+<rect x="14" y="3" width="1" height="1" fill="black"/>
+<rect x="6" y="16" width="5" height="1" fill="black"/>
+<rect x="1" y="6" width="15" height="5" fill="#FFFF00"/>
+<rect x="11" y="1" width="15" height="5" transform="rotate(90 11 1)" fill="#FFFF00"/>
+<rect x="6" y="2" width="13" height="2" transform="rotate(90 6 2)" fill="#FFFF00"/>
+<rect x="13" y="2" width="13" height="2" transform="rotate(90 13 2)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 13 3)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 3 3)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 2 4)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 14 4)" fill="#FFFF00"/>
+<rect x="11" y="11" width="1" height="1" fill="black"/>
+<rect x="12" y="10" width="1" height="1" fill="black"/>
+<rect x="5" y="11" width="1" height="1" fill="black"/>
+<rect x="4" y="10" width="1" height="1" fill="black"/>
+<rect x="6" y="12" width="5" height="1" fill="black"/>
+<rect x="10" y="5" width="2" height="2" fill="black"/>
+<rect x="5" y="5" width="2" height="2" fill="black"/>
+</svg>
+`,
+  faceWin: `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" width="5" height="1" fill="black"/>
+<rect x="15" y="4" width="1" height="2" fill="black"/>
+<rect y="6" width="1" height="5" fill="black"/>
+<rect x="16" y="6" width="1" height="5" fill="black"/>
+<rect x="1" y="4" width="1" height="2" fill="black"/>
+<rect x="1" y="11" width="1" height="2" fill="black"/>
+<rect x="15" y="11" width="1" height="2" fill="black"/>
+<rect x="11" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="15" width="2" height="1" fill="black"/>
+<rect x="11" y="15" width="2" height="1" fill="black"/>
+<rect x="13" y="14" width="1" height="1" fill="black"/>
+<rect x="14" y="13" width="1" height="1" fill="black"/>
+<rect x="3" y="14" width="1" height="1" fill="black"/>
+<rect x="2" y="13" width="1" height="1" fill="black"/>
+<rect x="2" y="3" width="1" height="1" fill="black"/>
+<rect x="3" y="2" width="1" height="1" fill="black"/>
+<rect x="13" y="2" width="1" height="1" fill="black"/>
+<rect x="14" y="3" width="1" height="1" fill="black"/>
+<rect x="6" y="16" width="5" height="1" fill="black"/>
+<rect x="1" y="6" width="15" height="5" fill="#FFFF00"/>
+<rect x="11" y="1" width="15" height="5" transform="rotate(90 11 1)" fill="#FFFF00"/>
+<rect x="6" y="2" width="13" height="2" transform="rotate(90 6 2)" fill="#FFFF00"/>
+<rect x="13" y="2" width="13" height="2" transform="rotate(90 13 2)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 13 3)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 3 3)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 2 4)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 14 4)" fill="#FFFF00"/>
+<rect x="11" y="11" width="1" height="1" fill="black"/>
+<rect x="5" y="11" width="1" height="1" fill="black"/>
+<rect x="6" y="12" width="5" height="1" fill="black"/>
+<rect x="3" y="6" width="1" height="1" fill="black"/>
+<rect x="2" y="7" width="1" height="1" fill="black"/>
+<rect x="1" y="8" width="1" height="1" fill="black"/>
+<rect x="13" y="6" width="1" height="1" fill="black"/>
+<rect x="14" y="7" width="1" height="1" fill="black"/>
+<rect x="14" y="7" width="1" height="1" fill="black"/>
+<rect x="12" y="8" width="1" height="1" fill="black" fill-opacity="0.5"/>
+<rect x="4" y="8" width="1" height="1" fill="black" fill-opacity="0.5"/>
+<rect x="15" y="8" width="1" height="1" fill="black"/>
+<rect x="8" y="5" width="1" height="1" fill="black"/>
+<rect x="5" y="8" width="2" height="1" fill="black"/>
+<rect x="10" y="8" width="2" height="1" fill="black"/>
+<rect x="9" y="5" width="4" height="3" fill="black"/>
+<rect x="4" y="5" width="4" height="3" fill="black"/>
+</svg>
+`,
+  faceLose: `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" width="5" height="1" fill="black"/>
+<rect x="15" y="4" width="1" height="2" fill="black"/>
+<rect y="6" width="1" height="5" fill="black"/>
+<rect x="16" y="6" width="1" height="5" fill="black"/>
+<rect x="1" y="4" width="1" height="2" fill="black"/>
+<rect x="1" y="11" width="1" height="2" fill="black"/>
+<rect x="15" y="11" width="1" height="2" fill="black"/>
+<rect x="11" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="15" width="2" height="1" fill="black"/>
+<rect x="11" y="15" width="2" height="1" fill="black"/>
+<rect x="13" y="14" width="1" height="1" fill="black"/>
+<rect x="14" y="13" width="1" height="1" fill="black"/>
+<rect x="3" y="14" width="1" height="1" fill="black"/>
+<rect x="2" y="13" width="1" height="1" fill="black"/>
+<rect x="2" y="3" width="1" height="1" fill="black"/>
+<rect x="3" y="2" width="1" height="1" fill="black"/>
+<rect x="13" y="2" width="1" height="1" fill="black"/>
+<rect x="14" y="3" width="1" height="1" fill="black"/>
+<rect x="6" y="16" width="5" height="1" fill="black"/>
+<rect x="1" y="6" width="15" height="5" fill="#FFFF00"/>
+<rect x="11" y="1" width="15" height="5" transform="rotate(90 11 1)" fill="#FFFF00"/>
+<rect x="6" y="2" width="13" height="2" transform="rotate(90 6 2)" fill="#FFFF00"/>
+<rect x="13" y="2" width="13" height="2" transform="rotate(90 13 2)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 13 3)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 3 3)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 2 4)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 14 4)" fill="#FFFF00"/>
+<rect x="6" y="12" width="1" height="1" transform="rotate(-180 6 12)" fill="black"/>
+<rect x="5" y="13" width="1" height="1" transform="rotate(-180 5 13)" fill="black"/>
+<rect x="12" y="12" width="1" height="1" transform="rotate(-180 12 12)" fill="black"/>
+<rect x="13" y="13" width="1" height="1" transform="rotate(-180 13 13)" fill="black"/>
+<rect x="11" y="11" width="5" height="1" transform="rotate(-180 11 11)" fill="black"/>
+<rect x="10" y="6" width="1" height="1" fill="black"/>
+<rect x="10" y="4" width="1" height="1" fill="black"/>
+<rect x="11" y="5" width="1" height="1" fill="black"/>
+<rect x="12" y="4" width="1" height="1" fill="black"/>
+<rect x="12" y="6" width="1" height="1" fill="black"/>
+<rect x="4" y="6" width="1" height="1" fill="black"/>
+<rect x="4" y="4" width="1" height="1" fill="black"/>
+<rect x="5" y="5" width="1" height="1" fill="black"/>
+<rect x="6" y="4" width="1" height="1" fill="black"/>
+<rect x="6" y="6" width="1" height="1" fill="black"/>
+</svg>
+`,
+  faceClick: `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" width="5" height="1" fill="black"/>
+<rect x="15" y="4" width="1" height="2" fill="black"/>
+<rect y="6" width="1" height="5" fill="black"/>
+<rect x="16" y="6" width="1" height="5" fill="black"/>
+<rect x="1" y="4" width="1" height="2" fill="black"/>
+<rect x="1" y="11" width="1" height="2" fill="black"/>
+<rect x="15" y="11" width="1" height="2" fill="black"/>
+<rect x="11" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="1" width="2" height="1" fill="black"/>
+<rect x="4" y="15" width="2" height="1" fill="black"/>
+<rect x="11" y="15" width="2" height="1" fill="black"/>
+<rect x="13" y="14" width="1" height="1" fill="black"/>
+<rect x="14" y="13" width="1" height="1" fill="black"/>
+<rect x="3" y="14" width="1" height="1" fill="black"/>
+<rect x="2" y="13" width="1" height="1" fill="black"/>
+<rect x="2" y="3" width="1" height="1" fill="black"/>
+<rect x="3" y="2" width="1" height="1" fill="black"/>
+<rect x="13" y="2" width="1" height="1" fill="black"/>
+<rect x="14" y="3" width="1" height="1" fill="black"/>
+<rect x="6" y="16" width="5" height="1" fill="black"/>
+<rect x="1" y="6" width="15" height="5" fill="#FFFF00"/>
+<rect x="11" y="1" width="15" height="5" transform="rotate(90 11 1)" fill="#FFFF00"/>
+<rect x="6" y="2" width="13" height="2" transform="rotate(90 6 2)" fill="#FFFF00"/>
+<rect x="13" y="2" width="13" height="2" transform="rotate(90 13 2)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 13 3)" fill="#FFFF00"/>
+<rect width="11" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 3 3)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 2 4)" fill="#FFFF00"/>
+<rect width="9" height="1" transform="matrix(-4.37114e-08 1 1 4.37114e-08 14 4)" fill="#FFFF00"/>
+<rect x="8" y="11" width="1" height="1" transform="rotate(-180 8 11)" fill="black"/>
+<rect x="7" y="12" width="1" height="1" transform="rotate(-180 7 12)" fill="black"/>
+<rect x="8" y="13" width="1" height="1" transform="rotate(-180 8 13)" fill="black"/>
+<rect x="10" y="11" width="1" height="1" transform="rotate(-180 10 11)" fill="black"/>
+<rect x="10" y="13" width="1" height="1" transform="rotate(-180 10 13)" fill="black"/>
+<rect x="11" y="12" width="1" height="1" transform="rotate(-180 11 12)" fill="black"/>
+<rect x="11" y="11" width="1" height="1" transform="rotate(-180 11 11)" fill="black" fill-opacity="0.5"/>
+<rect x="11" y="13" width="1" height="1" transform="rotate(-180 11 13)" fill="black" fill-opacity="0.5"/>
+<rect x="7" y="13" width="1" height="1" transform="rotate(-180 7 13)" fill="black" fill-opacity="0.5"/>
+<rect x="7" y="11" width="1" height="1" transform="rotate(-180 7 11)" fill="black" fill-opacity="0.5"/>
+<rect x="10" y="10" width="3" height="1" transform="rotate(-180 10 10)" fill="black"/>
+<rect x="10" y="14" width="3" height="1" transform="rotate(-180 10 14)" fill="black"/>
+<rect opacity="0.5" x="10" y="6" width="1" height="1" fill="black"/>
+<rect opacity="0.5" x="10" y="4" width="1" height="1" fill="black"/>
+<rect x="10" y="5" width="1" height="1" fill="black"/>
+<rect x="11" y="4" width="1" height="3" fill="black"/>
+<rect opacity="0.5" x="12" y="4" width="1" height="1" fill="black"/>
+<rect x="12" y="5" width="1" height="1" fill="black"/>
+<rect opacity="0.5" x="12" y="6" width="1" height="1" fill="black"/>
+<rect opacity="0.5" x="4" y="6" width="1" height="1" fill="black"/>
+<rect opacity="0.5" x="4" y="4" width="1" height="1" fill="black"/>
+<rect x="4" y="5" width="1" height="1" fill="black"/>
+<rect x="5" y="4" width="1" height="3" fill="black"/>
+<rect opacity="0.5" x="6" y="4" width="1" height="1" fill="black"/>
+<rect x="6" y="5" width="1" height="1" fill="black"/>
+<rect opacity="0.5" x="6" y="6" width="1" height="1" fill="black"/>
+</svg>
+`,
   flag: `<svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="4" width="1" height="9.5" fill="black"/>
 <rect y="8" width="8" height="2" fill="#010000"/>
