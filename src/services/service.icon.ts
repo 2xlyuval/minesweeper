@@ -1,4 +1,22 @@
 export const iconSvg: { [key: string | number]: string } = {
+  flag: `<svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" width="1" height="9.5" fill="black"/>
+<rect y="8" width="8" height="2" fill="#010000"/>
+<rect x="2" y="7" width="4" height="1" fill="#010000"/>
+<rect x="3" width="2" height="5" fill="#FC0D1B"/>
+<rect x="1" y="1" width="2" height="3" fill="#FC0D1B"/>
+<rect y="2" width="1" height="1" fill="#FC0D1B"/>
+</svg>
+`,
+  questionMark: `<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="1" width="2" height="2" fill="black"/>
+<rect x="1" width="4" height="1" fill="black"/>
+<rect x="4" y="1" width="2" height="3" fill="black"/>
+<rect x="3" y="4" width="2" height="1" fill="black"/>
+<rect x="2" y="5" width="2" height="2" fill="black"/>
+<rect x="2" y="8" width="2" height="2" fill="black"/>
+</svg>
+`,
   bomb: `<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="6" width="1" height="13" fill="black"/>
 <rect x="13" y="6" width="1" height="13" transform="rotate(90 13 6)" fill="black"/>

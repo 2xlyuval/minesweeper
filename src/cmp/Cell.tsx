@@ -5,6 +5,8 @@ import { updateCell } from "../store/board.actions"
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store"
 
+//TODO:  add right click to flag/question the cell
+
 export function Cell({ cell }: { cell: cell }) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
@@ -15,6 +17,7 @@ export function Cell({ cell }: { cell: cell }) {
   }
 
   function handleClick() {
+    if (cell.state === "flag") return
     updateCell({ ...cell, isRevealed: true })
 
     switch (cell.value) {
@@ -23,6 +26,23 @@ export function Cell({ cell }: { cell: cell }) {
         break
       case "B":
         clickOnBomb()
+        break
+      default:
+        break
+    }
+  }
+
+  function handleRightClick(e: React.MouseEvent) {
+    e.preventDefault()
+    switch (cell.state) {
+      case "empty":
+        updateCell({ ...cell, state: "flag" })
+        break
+      case "flag":
+        updateCell({ ...cell, state: "question" })
+        break
+      case "question":
+        updateCell({ ...cell, state: "empty" })
         break
       default:
         break
@@ -40,7 +60,6 @@ export function Cell({ cell }: { cell: cell }) {
     revealZeroCells(rowIndex, colIndex)
   }
 
-  //need to update this  - reveal all cell that are 0 and when it end the number
   function revealZeroCells(rowIndex: number, colIndex: number) {
     // Set to track visited cells
     const visited = new Set<string>()
@@ -88,13 +107,17 @@ export function Cell({ cell }: { cell: cell }) {
       className={`cell ${cell.isRevealed ? "uncover-border" : "outer-border"}`}
       {...(isClickedBomb ? { style: clickedBombCellStyle } : {})}
       onClick={handleClick}
+      onContextMenu={handleRightClick}
     >
       {cell.isRevealed ? (
         <span className={"uncover"}>
           {cell.value === 0 ? "" : <CustomIcon name={name} />}
         </span>
       ) : (
-        <span className="cover"></span>
+        <span className="cover">
+          {cell.state === "flag" ? <CustomIcon name="flag" /> : ""}
+          {cell.state === "question" ? <CustomIcon name="questionMark" /> : ""}
+        </span>
       )}
     </div>
   )
