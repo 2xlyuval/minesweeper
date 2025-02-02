@@ -22,6 +22,15 @@
         background: black;
         padding: 1px;
       }
+
+      .restart-btn {
+        border: 1px solid #7b7b7b;
+        cursor: pointer;
+
+        > div {
+          padding: 1px;
+        }
+      }
     }
 
     .cells-wrapper {

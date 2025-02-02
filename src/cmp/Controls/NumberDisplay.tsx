@@ -1,6 +1,6 @@
 import { CustomIcon } from "../CustomIcon"
 
-export function NumberDisplay({ number: number = 255 }) {
+export function NumberDisplay({ number: number = 0 }) {
   const digits = number.toString().padStart(3, "0").split("")
 
   return (
