@@ -32,15 +32,20 @@ export function CustomPopover({ item }: { item: menuPopover }) {
         }}
         sx={{
           "& .MuiPaper-root": {
-            backgroundColor: "black",
-            color: "white",
-            padding: "16px",
-            borderRadius: "12px",
-            boxShadow: "0px 4px 20px rgba(0,0,0,0.3)",
+            backgroundColor: "rgb(192, 192, 192)",
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderTopColor: "#808080",
+            borderLeftColor: "#808080",
+            borderRightColor: "black",
+            borderBottomColor: "black",
+            borderRadius: "0",
+            boxShadow: "none",
+            padding: "2px",
           },
         }}
       >
-        <Typography>Custom Styled Popover</Typography>
+        {item.content}
       </Popover>
     </div>
   )

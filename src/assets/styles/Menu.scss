@@ -4,3 +4,25 @@
   gap: 15px;
   margin-left: 3px;
 }
+
+.popover-content {
+  border-width: 1px;
+  border-style: solid;
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+
+  .field {
+    display: grid;
+    grid-template-columns: 13px auto max-content;
+    cursor: default;
+    &:hover {
+      color: #0000cc;
+    }
+  }
+
+  hr {
+    margin: 0;
+  }
+}
