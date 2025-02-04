@@ -1,4 +1,82 @@
 export const iconSvg: { [key: string | number]: string } = {
+  "digit-minus": `<svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.5" y="1.18185" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="2.36368" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="3.54549" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="4.72731" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="3.54549" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="5.90912" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="7.09094" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="5.90912" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="8.27277" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="9.45457" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="8.27277" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="10.6364" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="13" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="14.1819" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="15.3637" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="16.5455" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="15.3637" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="17.7273" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="18.9091" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="17.7273" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="20.0909" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="21.2728" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="20.0909" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" y="22.4546" width="1.18182" height="1.18182" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="11.8182" width="1.18182" height="1.18182" transform="rotate(-180 13 11.8182)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="10.6364" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 10.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="9.45457" width="1.18182" height="1.18182" transform="rotate(-180 13 9.45457)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="8.27275" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 8.27275)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="9.45457" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 9.45457)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="7.09094" width="1.18182" height="1.18182" transform="rotate(-180 13 7.09094)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="5.90912" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 5.90912)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="7.09093" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 7.09093)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="4.72729" width="1.18182" height="1.18182" transform="rotate(-180 13 4.72729)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="3.54549" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 3.54549)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="4.72729" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 4.72729)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="2.36366" width="1.18182" height="1.18182" transform="rotate(-180 13 2.36366)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="23.6364" width="1.18182" height="1.18182" transform="rotate(-180 13 23.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="22.4546" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 22.4546)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="21.2728" width="1.18182" height="1.18182" transform="rotate(-180 13 21.2728)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="20.0909" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 20.0909)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="21.2728" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 21.2728)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="18.9091" width="1.18182" height="1.18182" transform="rotate(-180 13 18.9091)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="17.7273" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 17.7273)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="18.9091" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 18.9091)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="16.5455" width="1.18182" height="1.18182" transform="rotate(-180 13 16.5455)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="15.3637" width="1.18182" height="1.18182" transform="rotate(-180 11.8182 15.3637)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="16.5455" width="1.18182" height="1.18182" transform="rotate(-180 10.6364 16.5455)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="13" y="14.1818" width="1.18182" height="1.18182" transform="rotate(-180 13 14.1818)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="11.8182" y="3.05176e-05" width="1.18182" height="1.18182" transform="rotate(90 11.8182 3.05176e-05)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6365" y="1.18185" width="1.18182" height="1.18182" transform="rotate(90 10.6365 1.18185)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="9.45459" y="3.05176e-05" width="1.18182" height="1.18182" transform="rotate(90 9.45459 3.05176e-05)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="8.27283" y="1.18185" width="1.18182" height="1.18182" transform="rotate(90 8.27283 1.18185)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="9.45459" y="2.36366" width="1.18182" height="1.18182" transform="rotate(90 9.45459 2.36366)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="7.09094" y="3.05176e-05" width="1.18182" height="1.18182" transform="rotate(90 7.09094 3.05176e-05)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="5.90918" y="1.18185" width="1.18182" height="1.18182" transform="rotate(90 5.90918 1.18185)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="7.09094" y="2.36366" width="1.18182" height="1.18182" transform="rotate(90 7.09094 2.36366)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="4.72729" y="3.05176e-05" width="1.18182" height="1.18182" transform="rotate(90 4.72729 3.05176e-05)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="3.54553" y="1.18185" width="1.18182" height="1.18182" transform="rotate(90 3.54553 1.18185)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="4.72729" y="2.36366" width="1.18182" height="1.18182" transform="rotate(90 4.72729 2.36366)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36365" y="3.05176e-05" width="1.18182" height="1.18182" transform="rotate(90 2.36365 3.05176e-05)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="1.18176" y="24.8182" width="1.18182" height="1.18182" transform="rotate(-90 1.18176 24.8182)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="2.36353" y="23.6364" width="1.18182" height="1.18182" transform="rotate(-90 2.36353 23.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="3.54541" y="24.8182" width="1.18182" height="1.18182" transform="rotate(-90 3.54541 24.8182)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="4.72717" y="23.6364" width="1.18182" height="1.18182" transform="rotate(-90 4.72717 23.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="3.54541" y="22.4546" width="1.18182" height="1.18182" transform="rotate(-90 3.54541 22.4546)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="5.90906" y="24.8182" width="1.18182" height="1.18182" transform="rotate(-90 5.90906 24.8182)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="7.09082" y="23.6364" width="1.18182" height="1.18182" transform="rotate(-90 7.09082 23.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="5.90906" y="22.4546" width="1.18182" height="1.18182" transform="rotate(-90 5.90906 22.4546)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="8.27271" y="24.8182" width="1.18182" height="1.18182" transform="rotate(-90 8.27271 24.8182)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="9.45447" y="23.6364" width="1.18182" height="1.18182" transform="rotate(-90 9.45447 23.6364)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="8.27271" y="22.4546" width="1.18182" height="1.18182" transform="rotate(-90 8.27271 22.4546)" fill="#FC0D1B"/>
+<rect opacity="0.5" x="10.6364" y="24.8182" width="1.18182" height="1.18182" transform="rotate(-90 10.6364 24.8182)" fill="#FC0D1B"/>
+<rect x="1.18176" y="11.8182" width="10.6364" height="1.18182" fill="#FC0D1B"/>
+<rect x="2.36353" y="10.6364" width="8.27273" height="1.18182" fill="#FC0D1B"/>
+<rect x="2.36353" y="13" width="8.27273" height="1.18182" fill="#FC0D1B"/>
+</svg>
+`,
   "digit-0": `<svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="1.18185" width="1.18182" height="10.6364" fill="#FC0D1B"/>
 <rect x="1.18176" y="2.36368" width="1.18182" height="8.27273" fill="#FC0D1B"/>

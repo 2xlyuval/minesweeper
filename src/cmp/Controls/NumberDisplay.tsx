@@ -1,12 +1,24 @@
 import { CustomIcon } from "../CustomIcon"
 
 export function NumberDisplay({ number: number = 0 }) {
-  const digits = number.toString().padStart(3, "0").split("")
+  // need to handle negative numbers
+  let digits = ["0", "0", "0"]
+  if (number < 0) {
+    digits[0] = "-"
+    digits[1] = Math.abs(number).toString().padStart(2, "0").split("")[0]
+    digits[2] = Math.abs(number).toString().padStart(2, "0").split("")[1]
+  } else {
+    digits = number.toString().padStart(3, "0").split("")
+  }
+
+  // const digits = number.toString().padStart(3, "0").split("")
 
   return (
     <div className="number-display">
       <div className="number-display__digits">
-        <CustomIcon name={`digit-${digits[0]}`} />
+        <CustomIcon
+          name={digits[0] === "-" ? "digit-minus" : `digit-${digits[0]}`}
+        />
       </div>
       <div className="number-display__digits">
         <CustomIcon name={`digit-${digits[1]}`} />
