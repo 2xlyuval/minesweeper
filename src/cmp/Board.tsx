@@ -22,20 +22,19 @@ export function Board() {
     gridTemplateColumns: `repeat(${cols}, 16px)`,
   }
 
-  function boardSetup(level: string) {
+  function boardSetup(level: board["level"]) {
     let rows = 0
     let cols = 0
     switch (level) {
-      case "easy":
+      case "beginner":
         rows = 8
         cols = 8
         break
-
-      case "medium":
+      case "intermediate":
         rows = 16
         cols = 16
         break
-      case "hard":
+      case "expert":
         rows = 16
         cols = 30
         break

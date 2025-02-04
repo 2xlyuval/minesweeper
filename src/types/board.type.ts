@@ -1,7 +1,7 @@
 import { cell } from "./cell.type"
 
 export type board = {
-  level: "easy" | "medium" | "hard" | "custom"
+  level: "beginner" | "intermediate" | "expert" | "custom"
   rows: number
   cols: number
   bombs: number

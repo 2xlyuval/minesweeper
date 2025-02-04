@@ -7,7 +7,7 @@ export const SET_MATRIX = "SET_MATRIX"
 export const UPDATE_CELL = "UPDATE_CELL"
 
 const initialState: board = {
-  level: "easy",
+  level: "beginner",
   rows: 0,
   cols: 0,
   bombs: 0,
