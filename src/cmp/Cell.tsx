@@ -5,9 +5,15 @@ import { updateCell } from "../store/board.actions"
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store"
 
-//TODO:  add right click to flag/question the cell
-
-export function Cell({ cell }: { cell: cell }) {
+export function Cell({
+  cell,
+  bombsCount,
+  setBombsCount,
+}: {
+  cell: cell
+  bombsCount: number
+  setBombsCount: Function
+}) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
   const name = cell.value === "B" ? "bomb" : cell.value
@@ -37,9 +43,11 @@ export function Cell({ cell }: { cell: cell }) {
     switch (cell.state) {
       case "empty":
         updateCell({ ...cell, state: "flag" })
+        setBombsCount(bombsCount - 1)
         break
       case "flag":
         updateCell({ ...cell, state: "question" })
+        setBombsCount(bombsCount + 1)
         break
       case "question":
         updateCell({ ...cell, state: "empty" })

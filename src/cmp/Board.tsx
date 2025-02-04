@@ -5,22 +5,30 @@ import { cell } from "../types/cell.type"
 import { Cell } from "./Cell"
 import { Controls } from "./Controls/Controls"
 import { RootState } from "../store/store"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { setBombs, setMatrix, setRowsAndCols } from "../store/board.actions"
 import { board } from "../types/board.type"
 
 export function Board() {
-  const { level, rows, cols, matrix }: board = useSelector(
+  const { level, rows, cols, bombs, matrix }: board = useSelector(
     (state: RootState) => state.board
   )
-  useEffect(() => {
-    if (!matrix.length) boardSetup(level)
-  }, [matrix])
-
+  const [bombsCount, setBombsCount] = useState(bombs)
   const style = {
     gridTemplateRows: `repeat(${rows}, 16px)`,
     gridTemplateColumns: `repeat(${cols}, 16px)`,
   }
+
+  useEffect(() => {
+    if (!matrix.length) {
+      boardSetup(level)
+    }
+  }, [matrix])
+
+  useEffect(() => {
+    setBombsCount(bombs)
+    console.log("bombs mounted")
+  }, [bombs])
 
   function boardSetup(level: board["level"]) {
     let rows = 0
@@ -112,12 +120,20 @@ export function Board() {
   }
 
   if (!matrix.length) return <div>Loading...</div>
+
   return (
     <div className="board outer-border">
-      <Controls />
+      <Controls bombsCount={bombsCount} />
       <div className="cells-wrapper inner-border" style={style}>
         {matrix.map((row, i) =>
-          row.map((cell, j) => <Cell key={`${i}-${j}`} cell={cell} />)
+          row.map((cell, j) => (
+            <Cell
+              key={`${i}-${j}`}
+              cell={cell}
+              bombsCount={bombsCount}
+              setBombsCount={setBombsCount}
+            />
+          ))
         )}
       </div>
     </div>
