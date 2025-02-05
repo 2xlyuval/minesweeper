@@ -11,8 +11,6 @@ export function NumberDisplay({ number: number = 0 }) {
     digits = number.toString().padStart(3, "0").split("")
   }
 
-  // const digits = number.toString().padStart(3, "0").split("")
-
   return (
     <div className="number-display">
       <div className="number-display__digits">

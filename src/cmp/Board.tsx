@@ -5,7 +5,7 @@ import { cell } from "../types/cell.type"
 import { Cell } from "./Cell"
 import { Controls } from "./Controls/Controls"
 import { RootState } from "../store/store"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { setBombs, setMatrix, setRowsAndCols } from "../store/board.actions"
 import { board } from "../types/board.type"
 
@@ -14,6 +14,10 @@ export function Board() {
     (state: RootState) => state.board
   )
   const [bombsCount, setBombsCount] = useState(bombs)
+  const [isRunning, setIsRunning] = useState(false)
+  const [time, setTime] = useState(0)
+  const intervalRef = useRef<any>(null)
+
   const style = {
     gridTemplateRows: `repeat(${rows}, 16px)`,
     gridTemplateColumns: `repeat(${cols}, 16px)`,
@@ -27,8 +31,36 @@ export function Board() {
 
   useEffect(() => {
     setBombsCount(bombs)
-    console.log("bombs mounted")
   }, [bombs])
+
+  useEffect(() => {
+    if (isRunning) {
+      intervalRef.current = setInterval(() => {
+        setTime((prevTime) => prevTime + 1)
+      }, 1000)
+    } else {
+      clearInterval(intervalRef.current)
+    }
+    return () => clearInterval(intervalRef.current)
+  }, [isRunning])
+
+  function startTimer() {
+    setIsRunning(true)
+  }
+
+  function stopTimer() {
+    setIsRunning(false)
+  }
+
+  function resetTimer() {
+    setIsRunning(false)
+    setTime(0)
+  }
+
+  function resetGame() {
+    boardSetup(level)
+    resetTimer()
+  }
 
   function boardSetup(level: board["level"]) {
     let rows = 0
@@ -123,7 +155,7 @@ export function Board() {
 
   return (
     <div className="board outer-border">
-      <Controls bombsCount={bombsCount} />
+      <Controls bombsCount={bombsCount} time={time} resetGame={resetGame} />
       <div className="cells-wrapper inner-border" style={style}>
         {matrix.map((row, i) =>
           row.map((cell, j) => (
@@ -132,6 +164,7 @@ export function Board() {
               cell={cell}
               bombsCount={bombsCount}
               setBombsCount={setBombsCount}
+              startTimer={startTimer}
             />
           ))
         )}

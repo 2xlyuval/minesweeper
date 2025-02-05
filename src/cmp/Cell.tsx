@@ -9,13 +9,16 @@ export function Cell({
   cell,
   bombsCount,
   setBombsCount,
+  startTimer,
 }: {
   cell: cell
   bombsCount: number
   setBombsCount: Function
+  startTimer: Function
 }) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
+  const [startGame, setStartGame] = useState(false)
   const name = cell.value === "B" ? "bomb" : cell.value
 
   const clickedBombCellStyle = {
@@ -24,6 +27,10 @@ export function Cell({
 
   function handleClick() {
     if (cell.state === "flag") return
+    if (!startGame) {
+      startTimer()
+      setStartGame(true)
+    }
     updateCell({ ...cell, isRevealed: true })
 
     switch (cell.value) {
