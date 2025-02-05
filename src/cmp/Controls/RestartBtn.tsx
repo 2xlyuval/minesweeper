@@ -15,8 +15,13 @@ export function RestartBtn({ resetGame }: { resetGame: () => void }) {
     return eventBus.off(GAME_OVER, () => {})
   }, [])
 
+  function handleResetBtnClick() {
+    resetGame()
+    setSmileyState("faceSmile")
+  }
+
   return (
-    <div className="restart-btn" onClick={resetGame}>
+    <div className="restart-btn" onClick={handleResetBtnClick}>
       <div className="outer-border">
         <CustomIcon name={smileyState} />
       </div>

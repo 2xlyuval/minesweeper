@@ -4,7 +4,7 @@ import { CustomIcon } from "./CustomIcon"
 import { updateCell } from "../store/board.actions"
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store"
-import { eventBus, GAME_OVER } from "../services/service.eventBus"
+import { eventBus, GAME_OVER, RESTART_GAME } from "../services/service.eventBus"
 
 export function Cell({
   cell,
@@ -27,6 +27,15 @@ export function Cell({
   const clickedBombCellStyle = {
     backgroundColor: "red",
   }
+
+  useEffect(() => {
+    eventBus.on(RESTART_GAME, () => {
+      setIsClickedBomb(false)
+    })
+    return () => {
+      eventBus.off(RESTART_GAME, () => {})
+    }
+  }, [])
 
   function handleClick() {
     if (cell.state === "flag") return

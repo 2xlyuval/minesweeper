@@ -8,6 +8,7 @@ import { RootState } from "../store/store"
 import { useEffect, useRef, useState } from "react"
 import { setBombs, setMatrix, setRowsAndCols } from "../store/board.actions"
 import { board } from "../types/board.type"
+import { eventBus, RESTART_GAME } from "../services/service.eventBus"
 
 export function Board() {
   const { level, rows, cols, bombs, matrix }: board = useSelector(
@@ -60,6 +61,7 @@ export function Board() {
   function resetGame() {
     boardSetup(level)
     resetTimer()
+    eventBus.emit(RESTART_GAME)
   }
 
   function boardSetup(level: board["level"]) {

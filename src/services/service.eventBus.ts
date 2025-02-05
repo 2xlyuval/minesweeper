@@ -1,4 +1,5 @@
 export const GAME_OVER = "game-over"
+export const RESTART_GAME = "restart-game"
 
 type EventCallback = (...args: any[]) => void
 
