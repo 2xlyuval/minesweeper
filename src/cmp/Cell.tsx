@@ -74,8 +74,6 @@ export function Cell({
   }
 
   function clickOnZero(rowIndex: number, colIndex: number) {
-    console.log("Click on Zero")
-    //this should reveal all the cells around it if they also have a value of 0
     revealZeroCells(rowIndex, colIndex)
   }
 
