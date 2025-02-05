@@ -165,6 +165,7 @@ export function Board() {
               bombsCount={bombsCount}
               setBombsCount={setBombsCount}
               startTimer={startTimer}
+              stopTimer={stopTimer}
             />
           ))
         )}

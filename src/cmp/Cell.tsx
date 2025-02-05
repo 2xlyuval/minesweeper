@@ -4,17 +4,20 @@ import { CustomIcon } from "./CustomIcon"
 import { updateCell } from "../store/board.actions"
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store"
+import { eventBus, GAME_OVER } from "../services/service.eventBus"
 
 export function Cell({
   cell,
   bombsCount,
   setBombsCount,
   startTimer,
+  stopTimer,
 }: {
   cell: cell
   bombsCount: number
   setBombsCount: Function
   startTimer: Function
+  stopTimer: Function
 }) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
@@ -65,8 +68,9 @@ export function Cell({
   }
 
   function clickOnBomb() {
-    console.log("Game Over")
+    stopTimer()
     setIsClickedBomb(true)
+    eventBus.emit(GAME_OVER)
   }
 
   function clickOnZero(rowIndex: number, colIndex: number) {
