@@ -45,6 +45,10 @@ export function Board() {
     return () => clearInterval(intervalRef.current)
   }, [isRunning])
 
+  useEffect(() => {
+    resetGame()
+  }, [level])
+
   function startTimer() {
     setIsRunning(true)
   }

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Popover, Button, Typography } from "@mui/material"
+import { Popover } from "@mui/material"
 import { menuPopover } from "../types/menuPopover.type"
 
 export function CustomPopover({ item }: { item: menuPopover }) {
@@ -45,7 +45,7 @@ export function CustomPopover({ item }: { item: menuPopover }) {
           },
         }}
       >
-        {item.content}
+        <div onClick={handleClose}>{item.content}</div>
       </Popover>
     </div>
   )
