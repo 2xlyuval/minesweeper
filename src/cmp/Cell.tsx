@@ -12,12 +12,14 @@ export function Cell({
   setBombsCount,
   startTimer,
   stopTimer,
+  setGameStop,
 }: {
   cell: cell
   bombsCount: number
   setBombsCount: Function
   startTimer: Function
   stopTimer: Function
+  setGameStop: Function
 }) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
@@ -80,6 +82,7 @@ export function Cell({
     stopTimer()
     setIsClickedBomb(true)
     revealAllBombs()
+    setGameStop(true)
     eventBus.emit(GAME_OVER)
   }
 

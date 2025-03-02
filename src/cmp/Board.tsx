@@ -25,6 +25,7 @@ export const Board = forwardRef<BoardRef>((props, ref) => {
   const [bombsCount, setBombsCount] = useState(bombs)
   const [isRunning, setIsRunning] = useState(false)
   const [time, setTime] = useState(0)
+  const [gameStop, setGameStop] = useState(false)
   const intervalRef = useRef<any>(null)
 
   const style = {
@@ -77,6 +78,7 @@ export const Board = forwardRef<BoardRef>((props, ref) => {
   function resetGame() {
     boardSetup(level)
     resetTimer()
+    setGameStop(false)
     eventBus.emit(RESTART_GAME)
   }
 
@@ -175,6 +177,7 @@ export const Board = forwardRef<BoardRef>((props, ref) => {
     <div className="board outer-border">
       <Controls bombsCount={bombsCount} time={time} resetGame={resetGame} />
       <div className="cells-wrapper inner-border" style={style}>
+        {gameStop && <div className="block-board"></div>}
         {matrix.map((row, i) =>
           row.map((cell, j) => (
             <Cell
@@ -184,6 +187,7 @@ export const Board = forwardRef<BoardRef>((props, ref) => {
               setBombsCount={setBombsCount}
               startTimer={startTimer}
               stopTimer={stopTimer}
+              setGameStop={setGameStop}
             />
           ))
         )}
