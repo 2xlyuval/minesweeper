@@ -5,12 +5,20 @@ import { cell } from "../types/cell.type"
 import { Cell } from "./Cell"
 import { Controls } from "./Controls/Controls"
 import { RootState } from "../store/store"
-import { useEffect, useRef, useState } from "react"
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react"
 import { setBombs, setMatrix, setRowsAndCols } from "../store/board.actions"
 import { board } from "../types/board.type"
 import { eventBus, RESTART_GAME } from "../services/service.eventBus"
-
-export function Board() {
+export interface BoardRef {
+  resetGame: () => void
+}
+export const Board = forwardRef<BoardRef>((props, ref) => {
   const { level, rows, cols, bombs, matrix }: board = useSelector(
     (state: RootState) => state.board
   )
@@ -48,6 +56,10 @@ export function Board() {
   useEffect(() => {
     resetGame()
   }, [level])
+
+  useImperativeHandle(ref, () => ({
+    resetGame,
+  }))
 
   function startTimer() {
     setIsRunning(true)
@@ -178,4 +190,4 @@ export function Board() {
       </div>
     </div>
   )
-}
+})

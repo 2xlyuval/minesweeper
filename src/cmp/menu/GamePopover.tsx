@@ -1,14 +1,14 @@
 import { setLevel } from "../../store/board.actions"
 import { board } from "../../types/board.type"
 
-export function GamePopover() {
+export const GamePopover = ({ handleReset }: { handleReset: () => void }) => {
   function handleClickLevel(level: board["level"]) {
     setLevel(level)
   }
 
   return (
     <div className="popover-content">
-      <div className="field">
+      <div className="field" onClick={handleReset}>
         <div></div>
         <div>New</div>
         <div>F2</div>
