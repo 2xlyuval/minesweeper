@@ -79,6 +79,7 @@ export function Cell({
   function clickOnBomb() {
     stopTimer()
     setIsClickedBomb(true)
+    revealAllBombs()
     eventBus.emit(GAME_OVER)
   }
 
@@ -126,6 +127,16 @@ export function Cell({
 
     // Start recursion
     helper(rowIndex, colIndex)
+  }
+
+  function revealAllBombs() {
+    matrix.forEach((row: cell[]) => {
+      row.forEach((cell) => {
+        if (cell.value === "B") {
+          updateCell({ ...cell, isRevealed: true })
+        }
+      })
+    })
   }
 
   return (
