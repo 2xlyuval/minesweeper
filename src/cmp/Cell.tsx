@@ -12,14 +12,14 @@ export function Cell({
   setBombsCount,
   startTimer,
   stopTimer,
-  setGameStop,
+  setBlockBoard,
 }: {
   cell: cell
   bombsCount: number
   setBombsCount: Function
   startTimer: Function
   stopTimer: Function
-  setGameStop: Function
+  setBlockBoard: Function
 }) {
   const matrix = useSelector((state: RootState) => state.board.matrix)
   const [isClickedBomb, setIsClickedBomb] = useState(false)
@@ -82,7 +82,7 @@ export function Cell({
     stopTimer()
     setIsClickedBomb(true)
     revealAllBombs()
-    setGameStop(true)
+    setBlockBoard(true)
     eventBus.emit(GAME_OVER)
   }
 
@@ -140,6 +140,26 @@ export function Cell({
         }
       })
     })
+  }
+
+  function isWinning() {
+    let isWinning = false
+    matrix.forEach((row: cell[]) => {
+      row.forEach((cell) => {
+        if (cell.value !== "B" && cell.isRevealed) {
+          isWinning = true
+        }
+      })
+    })
+    return isWinning
+  }
+
+  function gameWon() {
+    if (isWinning()) {
+      stopTimer()
+      setBlockBoard(true)
+      eventBus.emit(GAME_OVER)
+    }
   }
 
   return (
